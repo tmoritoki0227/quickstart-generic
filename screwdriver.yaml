@@ -1,6 +1,7 @@
 ---
 shared:
-  image: buildpack-deps
+  # image: buildpack-deps
+  image: rockylinux:8.7
 
 jobs:
   main:
