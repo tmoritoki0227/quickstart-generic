@@ -15,6 +15,7 @@ jobs:
       - pip_install: |
           wget https://bootstrap.pypa.io/get-pip.py
           python3 get-pip.py
+          pip3 install requests
       - sdcmdtest: sd-cmd exec foo/bar@latest
       # - sdcmdtest: foo/bar@latest
       # - set-metadata: meta set example.coverage 99.95
