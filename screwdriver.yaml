@@ -11,6 +11,7 @@ jobs:
       # - presd-setup-scm: yum install git -y
       - export: export GREETING="Hello, world!"
       - hello: echo $GREETING
+      - sd-cmd-test: foo/bar@latest
       # - set-metadata: meta set example.coverage 99.95
   # second_job:
   #   requires: [main] # second_job will run after main job is done
