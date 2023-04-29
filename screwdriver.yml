@@ -1,4 +1,7 @@
-# Job definition block
+---
+shared:
+  image: buildpack-deps
+
 jobs:
   main:
     requires: [~pr, ~commit]
