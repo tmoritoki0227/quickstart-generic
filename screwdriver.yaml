@@ -8,6 +8,7 @@ jobs:
     requires: [~pr, ~commit]
     # Steps definition block.
     steps:
+      - presd-setup-scm: yum install git -y
       - export: export GREETING="Hello, world!"
       - hello: echo $GREETING
       # - set-metadata: meta set example.coverage 99.95
