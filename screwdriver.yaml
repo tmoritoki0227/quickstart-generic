@@ -11,7 +11,7 @@ jobs:
       # - presd-setup-scm: yum install git -y
       - export: export GREETING="Hello, world!"
       - hello: echo $GREETING
-      - sdcmdtest: foo/bar@1.0.0
+      - sdcmdtest: sd-cmd exec foo/bar@latest
       # - sdcmdtest: foo/bar@latest
       # - set-metadata: meta set example.coverage 99.95
   # second_job:
