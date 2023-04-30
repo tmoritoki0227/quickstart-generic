@@ -17,6 +17,8 @@ jobs:
           python3 get-pip.py
           pip3 install requests
       - sdcmdtest: sd-cmd exec foo/bar@latest
+      - sdcmdtest2: |
+          sd-cmd exec foo/bar2@latest 
       # - sdcmdtest: foo/bar@latest
       # - set-metadata: meta set example.coverage 99.95
   # second_job:
