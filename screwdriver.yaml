@@ -19,8 +19,11 @@ jobs:
       - sdcmdtest: sd-cmd exec foo/bar@latest # install_collection.pyを実行している
       - sdcmdtest2: sd-cmd exec foo/bar2@latest # install_collection2.pyを実行している
       - sdcmdtest3: |
-          sd-cmd exec foo/bar3@latest /aaa/test/3.0.0 # install_collection3.pyを実行している
-          # echo $install_ver
+          lists=(${SD_COLLECTION//,/ }) 
+          for list in ${lists[@]}; do
+            install_cmd=$(sd-cmd exec foo/bar3@latest ${list}) # install_collection3.pyを実行している./aaa/release/1.0.0 の形式で渡す
+            echo "ansible-galaxy install ${install_cmd}"
+          done
       # - sdcmdtest: foo/bar@latest
       # - set-metadata: meta set example.coverage 99.95
   # second_job:
