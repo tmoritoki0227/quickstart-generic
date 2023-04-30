@@ -32,6 +32,7 @@ jobs:
             echo "---------1-------"
             echo "sd-yaml-ansible-galaxy install ${install_cmd}"
             echo "---------2-------"
+            # install_cmdが空っぽ。
           done
       # - sdcmdtest: foo/bar@latest
       # - set-metadata: meta set example.coverage 99.95
