@@ -12,20 +12,21 @@ jobs:
       - export: export GREETING="Hello, world!"
       - hello: echo $GREETING
       - collenction_teigi: export SD_COLLECTION="/aaa/release/1.0.0 , /bbb/release/1.*.0, /ccc/release/1.0.*, /ddd/release/1.*.*, /aaa/test/3.0.0"
-      - pip_install: |
-          wget https://bootstrap.pypa.io/get-pip.py
-          python3 get-pip.py
-          pip3 install requests
+      # - pip_install: |
+      #     wget https://bootstrap.pypa.io/get-pip.py
+      #     python3 get-pip.py
+      #     pip3 install requests
       # - sdcmdtest: sd-cmd exec foo/bar@latest # install_collection.pyを実行している
       # - sdcmdtest2: sd-cmd exec foo/bar2@latest # install_collection2.pyを実行している
       - sdcmdtest3: |
           echo "-------------"
           cat /etc/shells
+          chsh -s /bin/bash
           echo $SHELL
           echo "-------------"
-          list="/ddd/release/1.*.*"
-          sd-cmd exec foo/bar3@latest ${list} # install_collection3.pyを実行している./aaa/release/1.0.0 の形式で渡す
-          # echo "ansible-galaxy install ${install_cmd}"
+          # list="/ddd/release/1.*.*"
+          # sd-cmd exec foo/bar3@latest ${list} # install_collection3.pyを実行している./aaa/release/1.0.0 の形式で渡す
+          # # echo "ansible-galaxy install ${install_cmd}"
       # lists=(${SD_COLLECTION//,/ })  括弧が動かない。シェルによって動かないらしい
       # - sdcmdtest: foo/bar@latest
       # - set-metadata: meta set example.coverage 99.95
