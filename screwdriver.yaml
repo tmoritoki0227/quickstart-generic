@@ -19,7 +19,8 @@ jobs:
       # - sdcmdtest: sd-cmd exec foo/bar@latest # install_collection.pyを実行している
       # - sdcmdtest2: sd-cmd exec foo/bar2@latest # install_collection2.pyを実行している
       - sdcmdtest3: |
-          list="/aaa/release/1.0.0 "
+          echo $SHELL
+          list="/aaa/release/1.0.0"
           sd-cmd exec foo/bar3@latest ${list} # install_collection3.pyを実行している./aaa/release/1.0.0 の形式で渡す
           # echo "ansible-galaxy install ${install_cmd}"
       # - sdcmdtest: foo/bar@latest
