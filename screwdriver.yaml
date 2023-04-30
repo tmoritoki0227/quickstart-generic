@@ -5,7 +5,7 @@ shared:
 
 jobs:
   main:
-    requires: [~pr, ~commit, ~sd@:publish]
+    requires: [~pr, ~commit, ~sd@4:publish]
     # Steps definition block.
     steps:
       # - presd-setup-scm: yum install git -y
