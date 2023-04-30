@@ -19,7 +19,7 @@ jobs:
       # - sdcmdtest: sd-cmd exec foo/bar@latest # install_collection.pyを実行している
       # - sdcmdtest2: sd-cmd exec foo/bar2@latest # install_collection2.pyを実行している
       - sdcmdtest3: |
-          lists=["/aaa/release/1.0.0" "/bbb/release/1.*.0"]
+          lists=("/aaa/release/1.0.0" "/bbb/release/1.*.0")
           echo ${lists[0]}
           echo ${lists[@]}
 
