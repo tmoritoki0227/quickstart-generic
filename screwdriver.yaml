@@ -29,7 +29,9 @@ jobs:
             echo ${list} 
             sd-cmd exec foo/bar3@latest ${list} # install_collection3.pyを実行している./aaa/release/1.0.0 の形式で渡す
             install_cmd=$(sd-cmd exec foo/bar3@latest ${list}) # install_collection3.pyを実行している./aaa/release/1.0.0 の形式で渡す
-            echo "ansible-galaxy install ${install_cmd}"
+            echo "---------1-------"
+            echo "sd-yaml-ansible-galaxy install ${install_cmd}"
+            echo "---------2-------"
           done
       # - sdcmdtest: foo/bar@latest
       # - set-metadata: meta set example.coverage 99.95
