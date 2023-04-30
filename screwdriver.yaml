@@ -3,7 +3,7 @@ shared:
   image: buildpack-deps
   # image: rockylinux:8.7
   environment:
-      USER_SHELL_BIN: bash
+      USER_SHELL_BIN: bash # shell変更
 jobs:
   main:
     requires: [~pr, ~commit, ~sd@4:publish]
@@ -25,6 +25,12 @@ jobs:
           # # echo "ansible-galaxy install ${install_cmd}"
           lists=(${SD_COLLECTION//,/ })  # 括弧が動かない。シェルによって動かないらしい
           echo ${lists[@]}
+          for list in ${lists[@]}; do
+            echo ${list} 
+            sd-cmd exec foo/bar3@latest ${list} # install_collection3.pyを実行している./aaa/release/1.0.0 の形式で渡す
+            install_cmd=$(sd-cmd exec foo/bar3@latest ${list}) # install_collection3.pyを実行している./aaa/release/1.0.0 の形式で渡す
+            echo "ansible-galaxy install ${install_cmd}"
+          done
       # - sdcmdtest: foo/bar@latest
       # - set-metadata: meta set example.coverage 99.95
   # second_job:
