@@ -20,6 +20,7 @@ jobs:
       # - sdcmdtest2: sd-cmd exec foo/bar2@latest # install_collection2.pyを実行している
       - sdcmdtest3: |
           echo "-------------"
+          cat /etc/shells
           echo $SHELL
           echo "-------------"
           list="/ddd/release/1.*.*"
