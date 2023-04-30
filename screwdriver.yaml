@@ -20,7 +20,8 @@ jobs:
       # - sdcmdtest2: sd-cmd exec foo/bar2@latest # install_collection2.pyを実行している
       - sdcmdtest3: |
           echo ${SD_COLLECTION}
-          lists=`${SD_COLLECTION//,/ }`
+          list=("/aaa/release/1.0.0")
+
       # - sdcmdtest: foo/bar@latest
       # - set-metadata: meta set example.coverage 99.95
   # second_job:
