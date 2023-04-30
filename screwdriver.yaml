@@ -21,7 +21,8 @@ jobs:
       - sdcmdtest3: |
           lists=(${SD_COLLECTION//,/ }) 
           for list in ${lists[@]}; do
-            install_cmd=$(sd-cmd exec foo/bar3@latest ${list}) # install_collection3.pyを実行している./aaa/release/1.0.0 の形式で渡す
+            sd-cmd exec foo/bar3@latest ${list} # install_collection3.pyを実行している./aaa/release/1.0.0 の形式で渡す
+            # install_cmd=$(sd-cmd exec foo/bar3@latest ${list}) # install_collection3.pyを実行している./aaa/release/1.0.0 の形式で渡す
             echo "ansible-galaxy install ${install_cmd}"
           done
       # - sdcmdtest: foo/bar@latest
